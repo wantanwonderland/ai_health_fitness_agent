@@ -10,5 +10,6 @@ COPY . .
 # Set the port Cloud Run will use
 ENV PORT 8080
 
-# Run the web service
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+# Run Streamlit service
+CMD streamlit run health_agent.py --server.port 8080
+
